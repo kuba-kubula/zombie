@@ -1,5 +1,5 @@
 { "name":           "zombie",
-  "version":        "2.0.0-alpha24x",
+  "version":        "2.0.0-alpha24b",
   "description":    "Insanely fast, full-stack, headless browser testing using Node.js",
   "homepage":       "http://zombie.labnotes.org/",
   "author":         "Assaf Arkin <assaf@labnotes.org> (http://labnotes.org/)",
@@ -16,9 +16,10 @@
   ],
   "main":           "lib/zombie",
   "scripts": {
-    "build":        "coffee --bare --compile --output lib/zombie src/zombie/*.coffee",
-    "prepublish":   "coffee --bare --compile --output lib/zombie src/zombie/*.coffee",
-    "postpublish":  "rm -rf html man7 lib",
+    "build":        "cp -R src src_build && coffee --bare --compile --output lib/zombie src_build/zombie/*.coffee",
+    "prepublish":   "cp -R src src_build && coffee --bare --compile --output lib/zombie src_build/zombie/*.coffee",
+    "postinstall":  "rm -rf src_build",
+    "postpublish":  "rm -rf html man7 lib src_build",
     "test":         "./node_modules/.bin/mocha"
   },
   "engines": {
