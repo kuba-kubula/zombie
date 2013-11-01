@@ -1,5 +1,5 @@
 { "name": "zombie",
-  "version": "1.4.1c",
+  "version": "1.4.1d",
   "description": "Insanely fast, full-stack, headless browser testing using Node.js",
   "homepage": "http://zombie.labnotes.org/",
   "author": "Assaf Arkin <assaf@labnotes.org> (http://labnotes.org/)",
@@ -11,9 +11,10 @@
   ],
   "keywords": [ "test", "tests", "testing", "TDD", "spec", "specs", "BDD", "headless", "browser",
     "html", "html5", "dom", "css", "javascript", "integration", "ajax", "full-stack", "DSL" ],
-  "main": "lib/zombie",
+  "main": "build/zombie",
   "scripts": {
-    "build":        "coffee --bare --compile --output lib/zombie src/zombie/*.coffee"
+    "postinstall":  "coffee --bare --compile --output build/zombie lib/zombie/*.coffee",
+    "build":        "coffee --bare --compile --output build/zombie lib/zombie/*.coffee"
   },
   "engines": {
     "node": ">= 0.6.0"
