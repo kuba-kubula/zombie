@@ -147,7 +147,8 @@ class Resources extends Array
   _makeRequest: (method, url, data, headers, resource, callback)->
     browser = @_browser
 
-    url = URL.parse(url)
+    if typeof url is 'string'
+      url = URL.parse(url)
     method = (method || "GET").toUpperCase()
 
     # If the request is for a file:// descriptor, just open directly from the
