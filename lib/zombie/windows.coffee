@@ -20,6 +20,7 @@ JSDOM       = require("jsdom")
 HTML        = JSDOM.dom.level3.html
 URL         = require("url")
 EventSource = require("eventsource")
+WebSocket   = require("ws")
 Events      = JSDOM.dom.level3.events
 
 
@@ -169,7 +170,7 @@ class Windows
       plugins:       { value: [] }
       vendor:        { value: "Zombie Industries" }
    
-    # Add cookies, storage, alerts/confirm, XHR, JSON, Screen, etc
+    # Add cookies, storage, alerts/confirm, XHR, WebSockets, JSON, Screen, etc
     @_browser._cookies.extend window
     @_browser._storages.extend window
     @_browser._interact.extend window
@@ -194,6 +195,11 @@ class Windows
       url = URL.resolve(window.location, url)
       window.setInterval (->), 100 # We need this to trigger event loop
       return new EventSource(url)
+
+    # Web sockets
+    window.WebSocket = (url, protocol)->
+      origin = "#{window.location.protocol}//#{window.location.host}"
+      return new WebSocket(url, origin: origin, protocol: protocol)
 
     window.Image = (width, height)->
       img = new HTML.HTMLImageElement(window.document)

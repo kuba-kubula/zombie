@@ -2,10 +2,11 @@ Express = require("express")
 File    = require("fs")
 Path    = require("path")
 
-
 # An express server we use to test the browser.
-brains = Express.createServer()
-brains.use Express.bodyParser()
+brains = Express()
+brains.use Express.urlencoded()
+brains.use Express.json()
+brains.use(require('connect-multiparty')())
 brains.use Express.cookieParser()
 
 
