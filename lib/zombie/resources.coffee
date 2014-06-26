@@ -271,8 +271,9 @@ class Resources extends Array
         return
 
       # Set cookies
-      for cookie in jar.cookies
+      for cookie in jar.cookies or []
         cookies.update cookie.str
+
       # Determine whether to automatically redirect and which method to use
       # based on the status code
       switch response.statusCode
