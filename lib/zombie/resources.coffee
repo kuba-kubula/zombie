@@ -252,7 +252,7 @@ class Resources extends Array
       for name, value of browser.headers
         headers[name] = value
 
-    params = 
+    params =
       method:         method
       url:            url
       headers:        headers
@@ -261,6 +261,8 @@ class Resources extends Array
       proxy:          browser.proxy
       jar:            jar
       followRedirect: false
+      strictSSL:      false
+
 
     Request params, (error, response)=>
       if error
