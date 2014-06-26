@@ -1,6 +1,5 @@
-{
-  "name": "zombie",
-  "version": "1.4.1g",
+{ "name": "zombie",
+  "version": "1.4.1f",
   "description": "Insanely fast, full-stack, headless browser testing using Node.js",
   "homepage": "http://zombie.labnotes.org/",
   "author": "Assaf Arkin <assaf@labnotes.org> (http://labnotes.org/)",
@@ -10,45 +9,27 @@
     "Damian Janowski",
     "José Valim <jose.valim@plataformatec.com.br> (http://blog.plataformatec.com.br/)"
   ],
-  "keywords": [
-    "test",
-    "tests",
-    "testing",
-    "TDD",
-    "spec",
-    "specs",
-    "BDD",
-    "headless",
-    "browser",
-    "html",
-    "html5",
-    "dom",
-    "css",
-    "javascript",
-    "integration",
-    "ajax",
-    "full-stack",
-    "DSL"
-  ],
+  "keywords": [ "test", "tests", "testing", "TDD", "spec", "specs", "BDD", "headless", "browser",
+    "html", "html5", "dom", "css", "javascript", "integration", "ajax", "full-stack", "DSL" ],
   "main": "build/zombie",
   "scripts": {
     "test": "./node_modules/.bin/mocha",
-    "postinstall": "coffee --bare --compile --output build/zombie lib/zombie/*.coffee",
-    "build": "coffee --bare --compile --output build/zombie lib/zombie/*.coffee"
+    "postinstall":  "coffee --bare --compile --output build/zombie lib/zombie/*.coffee",
+    "build":        "coffee --bare --compile --output build/zombie lib/zombie/*.coffee"
   },
   "engines": {
     "node": ">= 0.6.0"
   },
   "dependencies": {
-    "eventsource": "~0.0.5",
-    "html5": "~0.3.8",
-    "jsdom": "~0.2.15",
-    "mime": "~1.2.7",
-    "ms": "~0.1.0",
-    "q": "~0.8.6",
-    "request": "~2.22.0",
-    "tough-cookie": "~0.9.13",
-    "ws": "~0.4.21"
+    "eventsource":      "~0.0.5",
+    "html5":            "~0.3.8",
+    "jsdom":            "~0.2.15",
+    "mime":             "~1.2.7",
+    "ms":               "~0.1.0",
+    "q":                "~0.8.6",
+    "request":          "~2.10.0",
+    "tough-cookie":     "~0.9.13",
+    "ws":               "~0.4.21"
   },
   "devDependencies": {
     "connect-multiparty": "~1.0.5",
@@ -69,8 +50,7 @@
     "url": "http://github.com/assaf/zombie/issues"
   },
   "licenses": [
-    {
-      "type": "MIT",
+    { "type": "MIT",
       "url": "http://github.com/assaf/zombie/blob/master/MIT-LICENSE"
     }
   ]
